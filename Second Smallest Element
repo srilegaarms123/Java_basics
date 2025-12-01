@@ -1,0 +1,30 @@
+#Given a number N followed by N elements, find the second smallest element.If it cannot be found then print -1
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int N = obj.nextInt();
+        int arr[] = new int[N];
+        for(int i=0;i<N;i++)
+        {
+            arr[i] = obj.nextInt();
+        }
+         Arrays.sort(arr);
+        if(N<2)
+        {
+            System.out.println(-1);
+            return;
+        }
+        int sm = arr[0];
+        for(int i=1;i<N;i++)
+        {
+            if(arr[i]!=sm)
+            {
+                System.out.print(arr[i]);
+                return;
+            }
+        }
+        System.out.println(-1);
+    }
+}
