@@ -1,0 +1,37 @@
+#Given 2 array of size N and M.merge them in sorted order and print it
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int[] arr1 = new int[N];
+        int[] arr2 = new int[M];
+        for(int i = 0; i < N; i++) {
+            arr1[i] = sc.nextInt();
+        }
+        for(int i = 0; i < M; i++) {
+            arr2[i] = sc.nextInt();
+        }
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        int[] merged = new int[N + M];
+        int i = 0, j = 0, k = 0;
+
+        while (i < N && j < M) {
+            if (arr1[i] < arr2[j]) {
+                merged[k++] = arr1[i++];
+            } else {
+                merged[k++] = arr2[j++];
+            }
+        }
+         while (i < N) merged[k++] = arr1[i++];
+         while (j < M) merged[k++] = arr2[j++];
+         for (int a = 0; a < merged.length; a++) {
+            if (a == merged.length - 1)
+                System.out.print(merged[a]);
+            else
+                System.out.print(merged[a] + " ");
+        }
+    }
+}
