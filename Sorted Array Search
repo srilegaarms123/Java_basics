@@ -1,0 +1,30 @@
+#Given 2 numbers N,K followed by a sorted array of N elements, search and tell if an element K is present in the array.print 'yes' if element is present otherwise print 'no'.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int N = obj.nextInt();
+        int K = obj.nextInt();
+        int arr[] = new int[N];
+        for(int i=0;i<N;i++)
+        {
+            arr[i] = obj.nextInt();
+        }
+         boolean found = false;
+        for(int i=0;i<N;i++)
+        {
+            if(arr[i] == K)
+            {
+                found = true;
+                break;
+            }
+        }
+        if(found)
+        {
+            System.out.print("yes");
+        }
+        else{
+            System.out.println("no");
+        }
+    }
+}
