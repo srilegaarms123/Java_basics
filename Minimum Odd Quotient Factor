@@ -1,0 +1,13 @@
+#Given number N, find the minimum factor which yeilds odd number as the quotient.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int N = obj.nextInt();
+        int factor = 1;
+        while (N % (factor * 2) == 0) {
+            factor *= 2;
+        }
+        System.out.print(factor);
+    }
+}
