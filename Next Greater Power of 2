@@ -1,0 +1,15 @@
+#Given a number N, find its next immediate greater power of 2(i.e 2^1, 2^2, 2^3...).
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int m = 1;
+        while(m<=n)
+        {
+            m = m*2;
+        }
+        System.out.print(m);
+        
+    }
+}
