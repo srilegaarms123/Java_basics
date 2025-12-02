@@ -1,0 +1,39 @@
+#Given an array of integers, implement the bubble sort algorithm recursively to sort the array in ascending order. You are not allowed to use any loops (for, while, etc.) in your implementation. Your function should sort the array in-place.
+import java.util.*;
+public class Main {
+    public static void bubble(int arr[], int j, int n) {
+        if (j == n - 1) {
+            return;
+        }
+        if (arr[j] > arr[j + 1]) {
+            int temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
+        bubble(arr, j + 1, n);
+    }
+    public static void bubbleSortRec(int arr[], int n) {
+        if (n == 1) {
+            return;
+        }
+        bubble(arr, 0, n);
+        bubbleSortRec(arr, n - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        bubbleSortRec(arr, n);
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i]);
+            if (i != n - 1) System.out.print(" ");
+        }
+    }
+}
