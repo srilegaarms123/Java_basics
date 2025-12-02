@@ -1,0 +1,22 @@
+#Given a string S, print it after changing the middle element to * (if the length of the string is even, change the 2 middle elements to *).
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        String sc = obj.next();
+        int n = sc.length();
+        char []arr = sc.toCharArray();
+        if(n % 2 == 1)
+        {
+            arr[n/2] = '*';
+        }
+        else{
+            arr[n/2] = '*';
+            arr[n/2 - 1] = '*';
+        }
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+        }
+    }
+}
