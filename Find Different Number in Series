@@ -1,0 +1,34 @@
+#Given an array of N elements which follows either even number or odd number series.There may exists at maximum 1 even number in the odd series or 1 odd number in the even series.Find the different number if exists otherwise print '-1'?
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = obj.nextInt();
+        }
+        int oddCount = 0, evenCount = 0;
+        int oddValue = -1, evenValue = -1;
+        for (int x : arr) {
+            if (x % 2 == 0) {
+                evenCount++;
+                evenValue = x;
+            } else {
+                oddCount++;
+                oddValue = x;
+            }
+        }
+         if (oddCount == 1) {
+            System.out.println(oddValue);
+        } 
+        else if (evenCount == 1) {
+            System.out.println(evenValue);
+        } 
+        else {
+            System.out.printf("-1");
+        }
+    }
+        
+}
