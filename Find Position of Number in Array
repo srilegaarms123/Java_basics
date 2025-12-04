@@ -1,0 +1,24 @@
+#Given a number N,K followed by array of N elements where the difference between any adjacent elements is 1. Find the position of the given number K.If K not found in the array print -1
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int k = obj.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = obj.nextInt();
+        }
+        int pos = -1;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i] == k)
+            {
+                pos = i + 1;
+                break;
+            }
+        }
+        System.out.print(pos);
+    }
+}
