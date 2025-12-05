@@ -1,0 +1,25 @@
+#Given an array A of N elements, count the number of distinct pairs (i,j) such that i < j and A[i] < A[j].If no such pairs can be made print -1
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] A = new int[n];
+        for (int i = 0; i < n; i++) {
+            A[i] = sc.nextInt();
+        }
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (A[i] < A[j]) {
+                    String pair = A[i] + "," + A[j];
+                    set.add(pair);
+                }
+            }
+        }
+        if (set.size() == 0)
+            System.out.println(-1);
+        else
+            System.out.println(set.size());
+    }
+}
