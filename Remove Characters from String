@@ -1,0 +1,24 @@
+#Given a string two strings S1 and S2, remove characters from the S1 which are present in the S2.If S1 becomes empty then print -1
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        String s1 = obj.next();
+        String s2 = obj.next();
+        boolean[] present = new boolean[256];  
+        for (int i = 0; i < s2.length(); i++) {
+            present[s2.charAt(i)] = true;
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < s1.length(); i++) {
+            if (!present[s1.charAt(i)]) {
+                result.append(s1.charAt(i));
+            }
+        }
+        if (result.length() == 0) {
+            System.out.println("-1");
+        } else {
+            System.out.println(result.toString());
+        }
+    }
+}
